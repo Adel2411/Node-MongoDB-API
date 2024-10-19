@@ -3,15 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
-  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "config": "^3.3.12",
