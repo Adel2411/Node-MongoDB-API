@@ -1,15 +1,10 @@
-### Check Health
-GET http://localhost:1337/healthcheck
-
-
 ### Create User
 POST http://localhost:1337/api/users
 Content-Type: application/json
 
 {
   "name": "John Doe",
-  "password": "password123",
-  "passwordConfirmation": "password123",
-  "email": "john.doe@example.com"
+  "password": "password124",
+  "passwordConfirmation": "password124",
+  "email": "john3.doe@example.com"
 }
-

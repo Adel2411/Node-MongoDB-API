@@ -5,7 +5,7 @@ import { CreateUserInput } from "../schema/user.schema";
 import { omit } from "lodash";
 
 export async function createUserHandler(
-  req: Request<{}, {}, CreateUserInput>,
+  req: Request<{}, {}, CreateUserInput["body"]>,
   res: Response,
 ) {
   try {
