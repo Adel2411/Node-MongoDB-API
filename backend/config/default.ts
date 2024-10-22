@@ -1,5 +1,4 @@
 export default {
-  port: 1337,
   dbUri: "mongodb://localhost:27017/ts-express-mongo",
   saltWorkFactor: 10,
   accessTokenTtl: "15m",
@@ -13,7 +12,7 @@ RKorn9Tee8cqmvDnWIHKLG8zx/M2hEbetwVCvADahF+OAuTRYiDBKNrIYJT5X4zh
 hupfWB56V/Ge8E9rI74OljufT+iic6JFW4F9szqa45SDTi5VfIgJhapvAEpL6cot
 AwIDAQAB
 -----END PUBLIC KEY-----`,
-    privateKey: `-----BEGIN RSA PRIVATE KEY-----
+  privateKey: `-----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEApEDPz9Lv5Ih705hhNp0lkFmqk6mv9IpibrayWqvYaHZxPa5M
 5vsD/pL9Y3d0/oVhQsb4qp2/Vknc8gkE8PWNRKorn9Tee8cqmvDnWIHKLG8zx/M2
 hEbetwVCvADahF+OAuTRYiDBKNrIYJT5X4zh+tEiTU+V96KnPeX+lBbu1POgt4xS

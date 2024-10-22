@@ -1,10 +1,12 @@
 import express from "express";
-import config from "config";
 import connect from "./utils/connect";
 import logger from "./utils/logger";
 import routes from "./routes";
+import dotenv from "dotenv";
 
-const port = config.get<number>("port");
+dotenv.config();
+
+const port = process.env.PORT || 1337;
 
 const app = express();
 
