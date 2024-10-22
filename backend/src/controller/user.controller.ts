@@ -10,9 +10,9 @@ export async function createUserHandler(
 ) {
   try {
     const user = await createUser(req.body); // Await the result of createUser
-    return res.status(201).json(omit(user.toJSON(), "password")); // Return created user
+    res.status(201).json(omit(user.toJSON(), "password")); // Return created user
   } catch (e: any) {
     logger.error(e);
-    return res.status(409).send(e.message); // Send a conflict status in case of error
+    res.status(409).send(e.message); // Send a conflict status in case of error
   }
 }

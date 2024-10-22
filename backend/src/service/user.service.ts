@@ -4,7 +4,7 @@ export async function createUser(input: {
   name: string;
   password: string;
   email: string;
-}) {
+}): Promise<UserDocument> {
   try {
     return await User.create(input);
   } catch (error: any) {
