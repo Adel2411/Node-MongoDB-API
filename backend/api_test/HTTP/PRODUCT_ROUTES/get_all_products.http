@@ -1,0 +1,2 @@
+### get_product.http
+GET http://localhost:1337/api/products

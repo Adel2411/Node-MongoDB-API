@@ -1,6 +1,12 @@
 import { Request, Response } from "express";
 import {CreateProductInput, DeleteProductInput, GetProductInput, UpdateProductInput} from "../schema/product.schema";
-import {createProduct, deleteProduct, findAndUpdateProduct, findProduct} from "../service/product.service";
+import {
+    createProduct,
+    deleteProduct,
+    findAndUpdateProduct,
+    findProduct,
+    findProducts
+} from "../service/product.service";
 
 export async function createProductHandler(req: Request<{}, {}, CreateProductInput["body"]>, res: Response) {
     const userId = res.locals.user._id as string;
@@ -65,6 +71,7 @@ export async function deleteProductHandler(req: Request<DeleteProductInput["para
 
 
 
-export async function getAllProductsHandler(req: Request, res: Response) {
-
+export async function getProductsHandler(req: Request, res: Response) {
+    const products = await findProducts({});
+    res.send(products);
 }

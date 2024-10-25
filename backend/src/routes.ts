@@ -12,7 +12,7 @@ import requireUser from "./middleware/requireUser";
 import {createProductSchema, deleteProductSchema, getProductSchema, updateProductSchema} from "./schema/product.schema";
 import {
   createProductHandler,
-  deleteProductHandler,
+  deleteProductHandler, getProductsHandler,
   getProductHandler,
   updateProductHandler
 } from "./controller/product.controller";
@@ -49,6 +49,9 @@ function routes(app: Express) {
     app.put("/api/products/:productId", requireUser, validateResource(updateProductSchema), updateProductHandler);
     app.get("/api/products/:productId", validateResource(getProductSchema), getProductHandler);
     app.delete("/api/products/:productId", requireUser, validateResource(deleteProductSchema), deleteProductHandler);
+
+    // Get all products
+    app.get("/api/products", getProductsHandler);
 }
 
 export default routes;

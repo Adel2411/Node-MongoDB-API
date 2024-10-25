@@ -1,0 +1,6 @@
+{
+  "title": "Sample Product",
+  "description": "This is a sample product description that is at least 30 characters long.",
+  "price": 99.99,
+  "image": "http://example.com/sample-product.jpg"
+}

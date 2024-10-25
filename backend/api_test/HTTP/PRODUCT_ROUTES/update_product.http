@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
   "title": "Updated Product Title",
-  "description": "This is an updated product description that is at least 100 characters long.",
+  "description": "This is an updated product description that is at least 30 characters long.",
   "price": 89.99,
   "image": "http://example.com/updated-product.jpg"
 }
