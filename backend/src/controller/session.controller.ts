@@ -17,25 +17,21 @@ export async function createUserSessionHandler(req: Request, res: Response) {
   if (!user) {
     res.status(401).send("Invalid username or password");
   } else {
-    // Create a new session
     const session = await createSession(
       user._id as string,
       req.get("user-agent") || "",
     );
 
-    // Create a session access token
     const accessToken = signJwt(
       { ...user, session: session._id },
       { expiresIn: process.env.ACCESS_TOKEN_TTL },
     );
 
-    // Create a session refresh token
     const refreshToken = signJwt(
       { ...user, session: session._id },
       { expiresIn: process.env.REFRESH_TOKEN_TTL },
     );
 
-    // Return the access token and refresh token
     res.send({ accessToken, refreshToken });
   }
 }
