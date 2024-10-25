@@ -23,7 +23,7 @@ export async function updateProductHandler(req: Request<UpdateProductInput["para
     const product = await findProduct({productId});
 
     if (product) {
-        if (product.user !== userId) {
+        if (String(product.user) !== userId) {
             res.sendStatus(403);
         } else {
             const updatedProduct = await findAndUpdateProduct({productId}, body, {new: true});
@@ -52,7 +52,7 @@ export async function deleteProductHandler(req: Request<DeleteProductInput["para
     const product = await findProduct({productId});
 
     if (product) {
-        if (product.user !== userId) {
+        if (String(product.user) !== userId) {
             res.sendStatus(403);
         } else {
             await deleteProduct({productId});

@@ -3,7 +3,7 @@ import {number, object, string, TypeOf} from "zod";
 export const payload = {
     body: object({
         title: string({ required_error: "Title is required" }),
-        description: string({ required_error: "Description is required" }).min(100, "Description must be at least 100 characters"),
+        description: string({ required_error: "Description is required" }).min(10, "Description must be at least 10 characters"),
         price: number({ required_error: "Price is required" }),
         image: string({ required_error: "Image is required" }),
     }),

@@ -1,3 +1,2 @@
 ### get_product.http
-GET http://localhost:1337/api/products/<productId>
-Authorization: Bearer <your_access_token>
+GET http://localhost:1337/api/products/product_6728q0dwer
