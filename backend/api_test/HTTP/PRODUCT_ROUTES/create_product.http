@@ -1,0 +1,11 @@
+### create_product.http
+POST http://localhost:1337/api/products
+Authorization: Bearer <your_access_token>
+Content-Type: application/json
+
+{
+  "title": "Sample Product",
+  "description": "This is a sample product description that is at least 100 characters long.",
+  "price": 99.99,
+  "image": "http://example.com/sample-product.jpg"
+}

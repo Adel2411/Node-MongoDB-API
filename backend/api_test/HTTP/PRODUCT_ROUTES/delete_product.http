@@ -1,0 +1,3 @@
+### delete_product.http
+DELETE http://localhost:1337/api/products/<productId>
+Authorization: Bearer <your_access_token>
