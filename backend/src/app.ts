@@ -1,24 +1,14 @@
-import express from "express";
 import connect from "./utils/connect";
 import logger from "./utils/logger";
-import routes from "./routes";
-import dotenv from "dotenv";
-import deserializeUser from "./middleware/deserializeUser";
+import createServer from "./utils/server";
+import config from "config";
 
-dotenv.config();
+const port = config.get<number>("port");
 
-const port = process.env.PORT || 1337;
-
-const app = express();
-
-app.use(express.json());
-
-app.use(deserializeUser);
+const app = createServer();
 
 app.listen(port, async () => {
   logger.info(`Server listening on port: ${port}`);
 
   await connect();
-
-  routes(app);
 });

@@ -6,9 +6,7 @@ import {
   updateSession,
 } from "../service/session.service";
 import { signJwt } from "../utils/jwt.utils";
-import dotenv from "dotenv";
-
-dotenv.config();
+import config from "config";
 
 export async function createUserSessionHandler(req: Request, res: Response) {
   // Validate the users password
@@ -24,12 +22,12 @@ export async function createUserSessionHandler(req: Request, res: Response) {
 
     const accessToken = signJwt(
       { ...user, session: session._id },
-      { expiresIn: process.env.ACCESS_TOKEN_TTL },
+      { expiresIn: config.get<string>("accessTokenTtl") },
     );
 
     const refreshToken = signJwt(
       { ...user, session: session._id },
-      { expiresIn: process.env.REFRESH_TOKEN_TTL },
+      { expiresIn: config.get<string>("refreshTokenTtl") },
     );
 
     res.send({ accessToken, refreshToken });
